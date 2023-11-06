@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './components/rating/Rating';
 import {Accordion} from './components/accordion/Accordion';
-import {UncontrolledOnOff} from './components/onOff/UncontrolledOnOff';
+import {UncontrolledOnOff} from './components/uncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './components/onOff/OnOff';
-import {UncontrolledAccordion} from './components/accordion/UncontrolledAccordion';
-import {UncontrolledRating} from './components/rating/UncontrolledRating';
+import {UncontrolledAccordion} from './components/uncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledRating} from './components/uncontrolledRating/UncontrolledRating';
 
 function App() {
 
@@ -22,10 +22,10 @@ function App() {
                        }}/>
             <UncontrolledAccordion titleValue={'Menu'}/>
 
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange={()=>{}}/>
             <OnOff on={on} setOn={setOn}/>
 
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={() => {}}/>
             <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
         </div>
     );

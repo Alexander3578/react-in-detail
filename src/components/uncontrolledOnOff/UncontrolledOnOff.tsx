@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 
-export const UncontrolledOnOff:React.FC = () => {
+type UncontrolledOnOff = {
+    onChange: (on: boolean) => void
+    defaultOn?: boolean
+}
 
-    let [on, setOn] = useState(false)
+export const UncontrolledOnOff:React.FC<UncontrolledOnOff> = ({onChange, defaultOn}) => {
+
+    let [on, setOn] = useState(defaultOn ? defaultOn : false)
 
     const onStyle = {
         width: '30px',
@@ -29,10 +34,20 @@ export const UncontrolledOnOff:React.FC = () => {
         backgroundColor: on ? 'green' : 'red'
     }
 
-    return (
+    const offClicked = () => {
+        setOn(false)
+        onChange(false)
+    }
+
+    const onClicked = () => {
+        setOn(true)
+        onChange(true)
+    }
+
+    return(
         <div>
-            <div style={onStyle} onClick={() => {setOn(true)}}>On</div>
-            <div style={offStyle} onClick={() => {setOn(false)}}>Off</div>
+            <div style={onStyle} onClick={onClicked}>On</div>
+            <div style={offStyle} onClick={offClicked}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
     );
