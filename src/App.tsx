@@ -17,6 +17,7 @@ function App() {
         <div className="App">
             <Accordion titleValue={'Menu'}
                        collapsed={accordionCollapsed}
+                       items={}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}/>

@@ -13,18 +13,31 @@ const onChangeHandler = action('onChange')
 export const CollapsedAccordion = () => {
     return <Accordion titleValue={'Collapsed'}
                       collapsed={true}
-                      onChange={onChangeHandler}/>
+                      items={[]}
+                      onChange={onChangeHandler}
+                      onClick={action('some item was clicked')}/>
 }
 
 export const OpenedAccordion = () => {
     return <Accordion titleValue={'Opened'}
                       collapsed={false}
-                      onChange={()=>{}}/>
+                      items={[{title: 'D', value: 1},
+                          {title: 'V', value: 2},
+                          {title: 'S', value: 3}]}
+                      onChange={() => {
+                      }}
+                      onClick={action('some item was clicked')}/>
 }
 
 export const DemoAccordion = () => {
     const [collapsed, setCollapsed] = useState<boolean>(true);
     return <Accordion titleValue={'Accordion'}
                       collapsed={collapsed}
-                      onChange={()=>{setCollapsed(!collapsed)}}/>
+                      items={[{title: 'D', value: 1},
+                          {title: 'V', value: 2},
+                          {title: 'S', value: 3}]}
+                      onChange={() => {
+                          setCollapsed(!collapsed)
+                      }}
+                      onClick={action('some item was clicked')}/>
 }
