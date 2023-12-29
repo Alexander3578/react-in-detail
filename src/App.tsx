@@ -17,10 +17,13 @@ function App() {
         <div className="App">
             <Accordion titleValue={'Menu'}
                        collapsed={accordionCollapsed}
-                       items={}
+                       items={[{title: 'D', value: 1},
+                           {title: 'V', value: 2},
+                           {title: 'S', value: 3}]}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
+                       }}
+                       onClick={()=>{}}/>
             <UncontrolledAccordion titleValue={'Menu'}/>
 
             <UncontrolledOnOff onChange={()=>{}}/>

@@ -7,7 +7,7 @@ type RatingPropsType = {
     setRatingValue: (rating: RatingValueType) => void
 }
 
-export const Rating: React.FC<RatingPropsType> = ({ratingValue, setRatingValue}) => {
+export const RatingSecret: React.FC<RatingPropsType> = ({ratingValue, setRatingValue}) => {
     return (
         <div>
             <Star selected={ratingValue > 0} setValue={() => setRatingValue(1)}/>
@@ -30,4 +30,6 @@ function Star(props: StarPropsType) {
     </span>
 
 }
+
+export const Rating = React.memo(RatingSecret);
 

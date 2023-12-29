@@ -5,7 +5,7 @@ type OnOffPropsType = {
     setOn: (on: boolean) => void
 }
 
-export const OnOff:React.FC<OnOffPropsType> = ({on, setOn}) => {
+const OnOffSecret:React.FC<OnOffPropsType> = ({on, setOn}) => {
 
     const onStyle = {
         width: '30px',
@@ -41,3 +41,4 @@ export const OnOff:React.FC<OnOffPropsType> = ({on, setOn}) => {
     );
 };
 
+export const OnOff = React.memo(OnOffSecret)

@@ -1,0 +1,20 @@
+.select {
+}
+
+.select .select_main{
+    display: inline-block;
+    border: 1px solid black;
+    min-height: 20px;
+    min-width: 60px;
+}
+
+.select_items{
+    position: absolute;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.select_item.selected{
+    background-color: #7070e7;
+    color: white;
+}
